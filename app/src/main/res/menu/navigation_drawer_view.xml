@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Defining a group that will be populated in the navigation drawer-->
+
+    <group
+        android:checkableBehavior="single"
+        android:id="@+id/group1">
+
+    <item
+        android:id="@+id/destination_nav_item1"
+        android:title="@string/wanderlust"
+        android:checked="true" />
+
+    <item
+        android:title="@string/my_trips"
+        android:id="@+id/my_trips_nav_item2"/>
+    </group>
+</menu>
