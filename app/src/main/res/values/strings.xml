@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Touristhan</string>
+    <string name="search_title">Find a place..</string>
+    <string name="wanderlust">Wanderlust</string>
+    <string name="my_trips">My Trips</string>
+    <string name="nav_bar_open">Open Navigation Bar</string>
+    <string name="nav_bar_close">Close Navigation Bar</string>
+</resources>
