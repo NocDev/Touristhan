@@ -6,15 +6,17 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.example.touristhan.fragments.WanderlustFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -24,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.toolbar)             Toolbar         toolbar;
     @BindView(R.id.navigation_view)     NavigationView  nvView;
     @BindView(R.id.drawer_layout)       DrawerLayout    mDraweLayout;
-    @BindView(R.id.recyclerView)       RecyclerView    mRecyclerVeiw;
+//    @BindView(R.id.recyclerView)       RecyclerView    mRecyclerVeiw;
 
     private ActionBarDrawerToggle mActionBarDrawerToggle;
 
@@ -64,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         setSupportActionBar(toolbar);
+        getSupportFragmentManager().beginTransaction().replace(R.id.main_container, new WanderlustFragment()).commit();
         mActionBarDrawerToggle = setupDrawerToggle();
         setupNavDrawerContent(nvView);
     }
@@ -87,6 +90,31 @@ public class MainActivity extends AppCompatActivity {
      * @param item The item clicked on
      */
     private void selectDrawerItem(MenuItem item){
+
+        Fragment fragment = null;
+        Class fragmentClass = null;
+        switch (item.getItemId()){
+            case R.id.nav_item1_wanderlust:
+                fragmentClass = WanderlustFragment.class;
+                        break;
+            default:
+                fragmentClass = WanderlustFragment.class;
+        }
+        if(fragmentClass!=null){
+            try {
+                fragment = (Fragment)fragmentClass.newInstance();
+            } catch (InstantiationException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        }
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.main_container, fragment).commit();
+        item.setChecked(true);
+        getSupportActionBar().setTitle(item.getTitle());
+        mDraweLayout.closeDrawers();
+
 
     }
 
