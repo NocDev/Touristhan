@@ -8,7 +8,7 @@
         android:id="@+id/group1">
 
     <item
-        android:id="@+id/destination_nav_item1"
+        android:id="@+id/nav_item1_wanderlust"
         android:title="@string/wanderlust"
         android:checked="true" />
 

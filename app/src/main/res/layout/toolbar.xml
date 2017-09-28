@@ -2,14 +2,11 @@
 <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:background="@android:color/white"
+    android:background="#536DFE"
     android:id="@+id/toolbar"
-    android:layout_marginTop="86dp"
-    android:minHeight="?actionBarSize"
-    android:layout_marginStart="16dp"
-    android:layout_marginEnd="16dp"
-    app:layout_scrollFlags="scroll"
+    app:layout_scrollFlags="scroll|enterAlways"
+    app:titleTextAppearance="@style/Toolbar.TitleText"
     android:layout_height="wrap_content"
-    app:popupTheme="@style/AppTheme.PopupOverlay">
+    >
 
 </android.support.v7.widget.Toolbar>

@@ -39,6 +39,7 @@ dependencies {
 
     /*Firebase*/
     compile 'com.google.firebase:firebase-database:11.4.0'
+    compile 'com.firebaseui:firebase-ui-database:0.4.1'
 
     testCompile 'junit:junit:4.12'
 }
